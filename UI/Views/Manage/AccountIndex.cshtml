@@ -1,0 +1,36 @@
+﻿@model UI.Controllers.AccountIndexViewModel
+
+@{
+    ViewBag.Title = "Сведения о пользователе";
+}
+
+<div class="container body-content">
+    <div>
+        <h2>Сведения о пользователе</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+        </dl>
+    </div>
+
+    <p>
+        @Html.ActionLink("Мои объявления", "ListOfUserAds", "Account") |
+        @Html.ActionLink("На главную", "Index", "Home")
+    </p>
+    <hr />
+    <p>
+        @Html.ActionLink("Изменить пароль", "ChangePassword", "Manage") |
+        @if (Request.Cookies["id"] != null && Request.Cookies["id"].Value != null)
+        {
+            if (Request.Cookies["Role"] != null && Request.Cookies["Role"].Value != "administrator")
+            {
+                @Html.ActionLink("Удалить аккаунт", "DeleteAccount", "Manage")
+            }
+        }
+    </p>
+</div>

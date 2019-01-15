@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Common.Entities.Ad>
+
+@{
+    ViewBag.Title = "Поиск по названию категории";
+}
+
+<h2>Поиск по названию категории</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" id="Search" name="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Поиск</button>
+        <br />
+        @foreach (var ad in Model)
+        {
+            <div class="media">
+                <div class="media-left">
+                    <img src="@ad.PicPath" class="media-object" width="100" height="100" />
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">@Html.ActionLink(ad.AdName, "Details", new { id = ad.Id })</h3>
+                    <p>@ad.Info</p>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<UI.Models.AccountModels.AppUser>
+
+@{
+    ViewBag.Title = "Все пользователи";
+}
+
+<h2>Все пользователи</h2>
+
+<p>
+    @if (Request.Cookies["id"] != null && Request.Cookies["id"].Value != null)
+    {
+        if (Request.Cookies["Role"] != null && Request.Cookies["Role"].Value == "administrator")
+        {
+            @Html.ActionLink("Создать", "Register", "Account")
+        }
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PasswordHash)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PasswordHash)
+        </td>
+        <td>
+            @Html.ActionLink("Размещенные объявления", "UserAds", new { id = item.Id }) |
+            @if (Request.Cookies["id"] != null && Request.Cookies["id"].Value != null)
+            {
+                if (Request.Cookies["Role"] != null && Request.Cookies["Role"].Value == "administrator")
+                {
+                    @Html.ActionLink("Изменить роль", "ChangeRole", new { id = item.Id })
+                    <label>&nbsp;|&nbsp;</label>
+                    @Html.ActionLink("Редактировать", "Edit", new { id = item.Id })
+                    <label>&nbsp;|&nbsp;</label>
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+                }
+            }
+        </td>
+    </tr>
+}
+
+</table>

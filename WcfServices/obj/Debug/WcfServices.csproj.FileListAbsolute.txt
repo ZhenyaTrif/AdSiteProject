@@ -1,0 +1,13 @@
+E:\PROJECTS\AdSiteProject\WcfServices\bin\Debug\WcfServices.dll.config
+E:\PROJECTS\AdSiteProject\WcfServices\bin\Debug\WcfServices.dll
+E:\PROJECTS\AdSiteProject\WcfServices\bin\Debug\WcfServices.pdb
+E:\PROJECTS\AdSiteProject\WcfServices\obj\Debug\WcfServices.csproj.CoreCompileInputs.cache
+E:\PROJECTS\AdSiteProject\WcfServices\obj\Debug\WcfServices.dll
+E:\PROJECTS\AdSiteProject\WcfServices\obj\Debug\WcfServices.pdb
+E:\GIT_Project\AdSiteProject\WcfServices\bin\Debug\WcfServices.dll.config
+E:\GIT_Project\AdSiteProject\WcfServices\bin\Debug\WcfServices.dll
+E:\GIT_Project\AdSiteProject\WcfServices\bin\Debug\WcfServices.pdb
+E:\GIT_Project\AdSiteProject\WcfServices\obj\Debug\WcfServices.csprojAssemblyReference.cache
+E:\GIT_Project\AdSiteProject\WcfServices\obj\Debug\WcfServices.csproj.CoreCompileInputs.cache
+E:\GIT_Project\AdSiteProject\WcfServices\obj\Debug\WcfServices.dll
+E:\GIT_Project\AdSiteProject\WcfServices\obj\Debug\WcfServices.pdb

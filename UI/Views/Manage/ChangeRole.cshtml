@@ -1,0 +1,34 @@
+﻿@model UI.Models.AccountModels.AppUser
+
+@{
+    ViewBag.Title = "Изменение роли";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Изменение роли</h4>
+        <hr />
+
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.UserName)
+        @Html.HiddenFor(model => model.Email)
+        @Html.HiddenFor(model => model.PasswordHash)
+        @Html.HiddenFor(model => model.PhoneNumber)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model=>model.RoleName, new SelectList(ViewBag.Roles), new { @class= "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Изменить" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

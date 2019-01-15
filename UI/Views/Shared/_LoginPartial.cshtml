@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            @if (Request.Cookies["id"] != null && Request.Cookies["id"].Value != null)
+            {
+                if (Request.Cookies["Role"].Value == "administrator" || Request.Cookies["Role"].Value == "moderator")
+                {
+                    <li>@Html.ActionLink("Категории", "AllCategories", "Home", routeValues: null, htmlAttributes: new { id = "allUsersLink" })</li>
+                    <li>@Html.ActionLink("Пользователи", "AllUsers", "Account", routeValues: null, htmlAttributes: new { id = "allUsersLink" })</li>
+                }
+            }
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "AccountIndex", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li>@Html.ActionLink("Logout", "Logout", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

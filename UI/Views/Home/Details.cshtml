@@ -1,0 +1,108 @@
+﻿@model Common.Entities.Ad
+
+@{
+    ViewBag.Title = "Объявление: " + Model.AdName;
+}
+
+<h4>Объявление</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Info)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PicPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PicPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPlacement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPlacement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>

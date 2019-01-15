@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("Категории", "CategoryIndex", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Поиск
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Поиск по названию", "SearchByName", "Home")</li>
+                            <li>@Html.ActionLink("Поиск по категории", "SearchByCategory", "Home")</li>
+                            <li>@Html.ActionLink("Поиск по типу", "SearchByType", "Home")</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="col-lg-12">
+        @if (Request.Cookies["id"] != null && Request.Cookies["id"].Value != null)
+        {
+            if (Request.Cookies["Role"] != null && (Request.Cookies["Role"].Value == "administrator" || Request.Cookies["Role"].Value == "moderator" || Request.Cookies["Role"].Value == "user"))
+            {
+                @Html.ActionLink("Разместить объявление", "CreateAd", "Home", new { area = "" }, new { @class = "btn btn-success btn-block btn-lg" })
+            }
+        }
+    </div>
+    <hr />
+    <div class="container-fluid body-content">
+        <br />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

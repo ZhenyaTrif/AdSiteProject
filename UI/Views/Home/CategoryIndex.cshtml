@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Common.Entities.Category>
+
+@{
+    ViewBag.Title = "Главная страница";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="text-center text-primary">
+        <h3>Категории</h3>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-10">
+                @foreach (var category in Model)
+                {
+                    <div class="col col-lg-5">
+                        @Html.ActionLink(category.CategoryName, "NavigateByCategory", "Home", new { id = category.Id }, new { @class = "btn btn-default btn-lg btn-block" })
+                    </div>
+                }
+            </div>
+            <div class="col col-lg-2">
+                <h4>@ViewBag.Service</h4>
+            </div>
+            
+        </div>
+    </div>
+}
+

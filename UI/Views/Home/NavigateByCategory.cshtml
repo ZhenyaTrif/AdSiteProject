@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Common.Entities.Ad>
+
+@{
+    ViewBag.Title = "Список объявлений";
+}
+
+@using (Html.BeginForm())
+{
+    <br />
+    <div class="container">
+        @foreach(var ad in Model)
+        {
+            <div class="media">
+                <div class="media-left">
+                    <img src="@ad.PicPath" class="media-object" width="100" height="100" />
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">@Html.ActionLink(ad.AdName, "Details", new { id = ad.Id })</h3>
+                    <p>@ad.Info</p>
+                </div>
+            </div>
+        }
+    </div>
+}
+
