@@ -54,12 +54,11 @@ namespace UI.Controllers
             if (result.Succeeded)
             {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-                return RedirectToAction("AccountIndexAsync", "Manage");
+                return RedirectToAction("CategoryIndex", "Home");
             }
             return View(model);
         }
 
-        [Authorize(Roles = "administrator, moderator")]
         public async Task<ActionResult> DeleteAccount(string userId = "nodel")
         {
             if(userId == "nodel")
