@@ -13,18 +13,15 @@ namespace UI.Controllers
     public class HomeController : Controller
     {
         IBridge bridge;
-        ServiceReference1.QuoteServiceClient obj;
 
         public HomeController(IBridge bridge)
         {
             this.bridge = bridge;
-            obj = new ServiceReference1.QuoteServiceClient();
             Logger.InitLogger();
         }
 
         public ActionResult CategoryIndex()
         {
-            ViewBag.Service = obj.GetQuote();
             return View(bridge.GetCategories());
         }
 

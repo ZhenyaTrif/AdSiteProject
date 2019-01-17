@@ -184,6 +184,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdvertisingController.cs" />
     <Compile Include="DependencyResolution\ControllerConvention.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
@@ -282,6 +283,7 @@
     <Content Include="Views\Home\SearchByName.cshtml" />
     <Content Include="Views\Home\SearchByCategory.cshtml" />
     <Content Include="Views\Home\SearchByType.cshtml" />
+    <Content Include="Views\Advertising\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
